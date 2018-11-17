@@ -6,16 +6,23 @@ public class Submission {
     private int[] exercises;
     private String course;
 
+    public String getCourse(){
+        return course;
+    }
+    
     public int getHours(){
         return hours;
+    }
+    
+    public int getWeek(){
+        return week;
     }
     
     public int getExerciseAmount(){
         return (exercises == null) ? 0 : exercises.length;
     }
-    
-    @Override
-    public String toString() {
+
+    public String contentString(int maxExercises) {
         String format = (hours == 1) ? " tunti" : " tuntia";
         String exerciseString = "";
         for (int i = 0; i < exercises.length; ++i){
@@ -23,7 +30,7 @@ public class Submission {
             if (i < exercises.length - 1)
                 exerciseString += ",";
         }
-        return course + ", viikko " + week + " tehtyjä tehtäviä yhteensä " + exercises.length + ", aikaa kului " + hours + format + ", tehdyt tehtävät:" + exerciseString;
+        return "viikko " + week + ": \n tehtyjä tehtäviä " + exercises.length + "/" + maxExercises + ", aikaa kului " + hours + format + ", tehdyt tehtävät:" + exerciseString;
     }
     
 }
