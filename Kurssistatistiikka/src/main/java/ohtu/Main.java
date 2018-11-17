@@ -30,7 +30,7 @@ public class Main {
         }
         
         String formatHour = (hours == 1) ? " tunti" : " tuntia";
-        String formatExercise = (exercises == 1) ? " tehtävä," : " tehtävää,";
+        String formatExercise = (exercises == 1) ? " tehtävä, " : " tehtävää, ";
         System.out.println("\n yhteensä: " + exercises + formatExercise + hours + formatHour);
     }
 }
