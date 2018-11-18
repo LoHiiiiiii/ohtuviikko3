@@ -21,6 +21,10 @@ public class Course {
         return name;
     }
     
+    public int getWeek(){
+        return week;
+    }
+    
     public int getExercises(int week){
         if (week < exercises.length)
             return exercises[week];
